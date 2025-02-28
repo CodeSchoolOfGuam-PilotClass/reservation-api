@@ -10,8 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_28_091835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "reservations", force: :cascade do |t|
+    t.string "guest_name"
+    t.decimal "party_size"
+    t.boolean "cancelled"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "time"
+    t.string "date"
+    t.integer "restaurant_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
