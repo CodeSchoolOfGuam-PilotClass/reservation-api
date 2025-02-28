@@ -1,14 +1,14 @@
 class Restaurant < ApplicationRecord
-  validates :name, presence: true
-  validates :location, presence: true
+  # validates :name, presence: true
+  # validates :location, presence: true
 
-  has_many :reservations
+  # has_many :reservations
 
-  before_save :capitalize_name
+  # before_save :capitalize_name
 
-  private
+  # private
 
-  def capitalize_name
-    name.capitalize
-  end
+  # def capitalize_name
+  #   name.capitalize
+  # end
 end

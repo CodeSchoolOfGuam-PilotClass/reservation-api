@@ -1,14 +1,7 @@
 class ReservationsController < ApplicationController
   def index
-    reservation = Reservation.create!(
-      guest_name: params[:guest_name],
-      party_size: params[:party_size],
-      cancelled: false,
-      time: params[:time],
-      date: params[:date],
-      restaurant_id: params[restaurant_id])
-
-    render json: reservation
+    reservations = Reservation.all
+    render json: reservations
   end
 
   def show
