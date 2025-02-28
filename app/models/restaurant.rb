@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+  include Cancellable
   validates :name, presence: true
   validates :location, presence: true
 
